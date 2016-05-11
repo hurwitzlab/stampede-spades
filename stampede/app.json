@@ -1,0 +1,174 @@
+{
+    "available": true,
+    "checkpointable": false,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 16,
+    "defaultMaxRunTime": "12:00:00",
+    "defaultNodeCount": 1,
+    "defaultQueue": "serial",
+    "deploymentPath": "kyclark/applications/spades-3.7.1",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "tacc-stampede-kyclark",
+    "executionType": "HPC",
+    "helpURI": "http://bioinf.spbau.ru/spades",
+    "label": "Velvet",
+    "longDescription": "SPAdes assembler",
+    "modules": [],
+    "name": "SPAdes",
+    "ontology": ["http://sswapmeet.sswap.info/agave/apps/Application"],
+    "parallelism": "SERIAL",
+    "shortDescription": "SPAdes assembler",
+    "tags": ["spades","assembler","assembly"],
+    "templatePath": "stampede/spades-template.sh",
+    "testPath": "stampede/test-spades.sh",
+    "version": "3.7.1",
+    "inputs": [
+    {
+        "id": "IN_DIR",
+        "value": {
+            "default": "",
+            "order": 0,
+            "required": true,
+            "validator": "",
+            "visible": true
+        },
+        "semantics": {
+            "ontology": ["http://sswapmeet.sswap.info/mime/application/X-bam"],
+            "minCardinality": 1,
+            "fileTypes": ["raw-0"]
+        },
+        "details": {
+            "description": "",
+            "label": "Directory of input files (FASTA/Q, BAM, etc.)",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "FILE_DESC",
+        "value": {
+            "default": "",
+            "order": 0,
+            "required": true,
+            "validator": "",
+            "visible": true
+        },
+        "semantics": {
+            "ontology": ["http://sswapmeet.sswap.info/mime/application/X-bam"],
+            "minCardinality": 1,
+            "fileTypes": ["raw-0"]
+        },
+        "details": {
+            "description": "",
+            "label": "Tab-delimited file of file (basename) and library",
+            "argument": "",
+            "showArgument": true
+        }
+    }
+    ],
+    "parameters": [{
+        "id": "SC",
+        "value": {
+            "type": "enumeration",
+            "enumValues": ["no","yes"],
+            "default": "no",
+            "order": 1,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "This flag is required for MDA (single-cell) data",
+            "label": "MDA",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "META",
+        "value": {
+            "type": "enumeration",
+            "enumValues": ["no","yes"],
+            "default": "no",
+            "order": 2,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "This flag is required for metagenomic sample data",
+            "label": "Meta",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "IONTORRENT",
+        "value": {
+            "type": "enumeration",
+            "enumValues": ["no","yes"],
+            "default": "no",
+            "order": 3,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "This flag is required for IonTorrent data",
+            "label": "IonTorrent",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "K",
+        "value": {
+            "type": "string",
+            "default": "",
+            "order": 4,
+            "required": false,
+            "visible": true
+        },
+        "details": {
+            "description": "Comma-separated list of k-mer sizes; must be odd and less than 128 (auto)",
+            "label": "K list",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "COV_CUTOFF",
+        "value": {
+            "type": "string",
+            "default": "",
+            "order": 5,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "Coverage cutoff value, a positive float number, or 'auto', or 'off' (off)",
+            "label": "Coverage cutoff",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "PHRED_OFFSET",
+        "value": {
+            "type": "string",
+            "default": "",
+            "order": 6,
+            "required": false,
+            "visible": true
+        },
+        "details": {
+            "description": "PHRED quality offset in the input reads [33 or 64] (auto-detect)",
+            "label": "Phred offset",
+            "argument": "",
+            "showArgument": true
+        }
+    } 
+    ],
+    "outputs": []
+}
