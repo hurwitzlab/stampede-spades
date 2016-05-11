@@ -11,7 +11,7 @@
     "executionSystem": "tacc-stampede-kyclark",
     "executionType": "HPC",
     "helpURI": "http://bioinf.spbau.ru/spades",
-    "label": "Velvet",
+    "label": "SPAdes",
     "longDescription": "SPAdes assembler",
     "modules": [],
     "name": "SPAdes",
@@ -49,7 +49,7 @@
         "value": {
             "default": "",
             "order": 0,
-            "required": true,
+            "required": false,
             "validator": "",
             "visible": true
         },
@@ -74,7 +74,6 @@
             "default": "no",
             "order": 1,
             "required": false,
-            "validator": "",
             "visible": true
         },
         "details": {
@@ -92,7 +91,6 @@
             "default": "no",
             "order": 2,
             "required": false,
-            "validator": "",
             "visible": true
         },
         "details": {
@@ -110,7 +108,6 @@
             "default": "no",
             "order": 3,
             "required": false,
-            "validator": "",
             "visible": true
         },
         "details": {

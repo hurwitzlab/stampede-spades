@@ -13,7 +13,7 @@ upload:
 	files-upload -F $(WORK)/spades-3.7.1 kyclark/applications
 
 test:
-	./test-spades.sh
+	sbatch ./test-spades.sh
 
 reilly:
 	OUT_DIR=$(WORK)/reilly/spades IN_DIR=$(WORK)/reilly/RNA17_Klugipaussus_RawReads.fa.gz sbatch ./spades-template.sh
